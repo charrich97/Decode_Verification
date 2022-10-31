@@ -1,0 +1,120 @@
+<certe_dump>
+  <instance type=" test_base "> 
+     uvm_test_top 
+  
+     <instance type=" decode_environment "> 
+        decode_env 
+  
+        <instance type=" decode_in_agent "> 
+           decode_in_agent_inst 
+  
+           <instance type=" decode_in_driver "> 
+              decode_in_agent_inst_driver 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 rsp_port 
+                 <connection>  uvm_test_top.decode_env.decode_in_agent_inst.sequencer.rsp_export  </connection> 
+              </port> 
+  
+              <port if_type = "uvm_seq_item_pull_port" txn_type = "anonymous"> 
+                 seq_item_port 
+                 <connection>  uvm_test_top.decode_env.decode_in_agent_inst.sequencer.seq_item_export  </connection> 
+              </port> 
+           </instance> 
+  
+  
+           <instance type=" decode_in_monitor "> 
+              decode_in_agent_inst_monitor 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 monitored_ap 
+                 <connection>  uvm_test_top.decode_env.decode_in_agent_inst.monitored_ap  </connection> 
+              </port> 
+           </instance> 
+  
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              monitored_ap 
+              <connection>  uvm_test_top.decode_env.decode_predict_inst.analysis_imp  </connection> 
+           </port> 
+  
+           <instance type=" uvm_sequencer "> 
+              sequencer 
+  
+              <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+                 rsp_export 
+                 <connection>  uvm_test_top.decode_env.decode_in_agent_inst.sequencer.sqr_rsp_analysis_fifo.analysis_export  </connection> 
+              </export> 
+  
+              <imp if_type = "uvm_seq_item_pull_imp" txn_type = "anonymous"> 
+                 seq_item_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" decode_out_agent "> 
+           decode_out_agent_inst 
+  
+           <instance type=" decode_out_monitor "> 
+              decode_out_agent_inst_monitor 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 monitored_ap 
+                 <connection>  uvm_test_top.decode_env.decode_out_agent_inst.monitored_ap  </connection> 
+              </port> 
+           </instance> 
+  
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              monitored_ap 
+              <connection>  uvm_test_top.decode_env.decode_sb_inst.obsvr_ae  </connection> 
+           </port> 
+        </instance> 
+  
+  
+        <instance type=" decode_predictor "> 
+           decode_predict_inst 
+  
+           <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+              analysis_imp 
+           </imp> 
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              predictor_ap 
+              <connection>  uvm_test_top.decode_env.decode_sb_inst.predict_ae  </connection> 
+           </port> 
+        </instance> 
+  
+  
+        <instance type=" decode_scoreboard "> 
+           decode_sb_inst 
+  
+           <imp if_type = "uvm_analysis_imp_actual" txn_type = "anonymous"> 
+              obsvr_ae 
+           </imp> 
+  
+           <imp if_type = "uvm_analysis_imp_expected" txn_type = "anonymous"> 
+              predict_ae 
+           </imp> 
+        </instance> 
+  
+     </instance> 
+  
+  
+     <instance type=" print_component "> 
+        print_compt 
+  
+        <imp if_type = "uvm_analysis_imp_din_ae" txn_type = "anonymous"> 
+           din_ae 
+        </imp> 
+  
+        <imp if_type = "uvm_analysis_imp_dout_ae" txn_type = "anonymous"> 
+           dout_ae 
+        </imp> 
+     </instance> 
+  
+  </instance> 
+  
+  </certe_dump>

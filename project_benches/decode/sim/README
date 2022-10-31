@@ -1,0 +1,5 @@
+#####################################################################################
+# How to Run My Decoder Interface Simulation
+#####################################################################################
+#1. Simulation                        : make p1_debug
+#2. Regression with Coverage Metrics  : make p1_cov

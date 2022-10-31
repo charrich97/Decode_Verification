@@ -1,0 +1,514 @@
+# //  Questa Sim
+# //  Version 2020.4_1 linux Nov  6 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -i -sv_seed 1 "+UVM_TESTNAME=test_base" -permit_unmatched_virtual_intf "+notimingchecks" -suppress 8887 -solvefaildebug -solvefailtestcase -assertdebug -uvmcontrol=all "+uvm_set_config_int=*,enable_transaction_viewing,1" -classdebug -msgmode tran -do " set NoQuitOnFinish 1; run 0; do wave.do " optimized_debug_top_tb 
+# Start time: 12:25:30 on Oct 30,2022
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.lc3_prediction_pkg(fast)
+# Loading work.decode_out_driver_bfm(fast)
+# Loading work.decode_out_monitor_bfm(fast)
+# Loading work.uvmf_base_pkg_hdl(fast)
+# Loading work.decode_out_pkg_hdl(fast)
+# Loading work.uvmf_base_pkg(fast)
+# Loading work.decode_out_pkg(fast)
+# Loading work.decode_in_driver_bfm(fast)
+# Loading work.decode_in_monitor_bfm(fast)
+# Loading work.decode_in_pkg_hdl(fast)
+# Loading work.decode_in_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.decode_env_pkg(fast)
+# Loading work.decode_test_pkg(fast)
+# Loading work.hvl_top_sv_unit(fast)
+# Loading work.hvl_top(fast)
+# Loading work.hdl_top(fast)
+# Loading work.decode_in_if_sv_unit(fast)
+# Loading work.decode_in_if(fast__1)
+# Loading work.decode_out_if_sv_unit(fast)
+# Loading work.decode_out_if(fast__1)
+# Loading work.decode_in_monitor_bfm_sv_unit(fast)
+# Loading work.decode_in_monitor_bfm(fast__1)
+# Loading work.decode_in_driver_bfm_sv_unit(fast)
+# Loading work.decode_in_driver_bfm(fast__1)
+# Loading work.decode_out_monitor_bfm_sv_unit(fast)
+# Loading work.decode_out_monitor_bfm(fast__1)
+# Loading work.decode_out_driver_bfm_sv_unit(fast)
+# Loading work.decode_out_driver_bfm(fast__1)
+# Loading work.Decode(fast)
+# Loading /afs/eos.ncsu.edu/dist/questasim2020_4/uvm-1.1d/linux/uvm_dpi.so
+#  set NoQuitOnFinish 1
+# 1
+#  run 0
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# ----------------------------------------------------------------
+# //  UVM Framework 
+# //  Version 2022.3
+# //  (C) 2013-2022 Siemens Corporation
+# //  Digital Industries Software
+# //  Siemens EDA
+# //  All Rights Reserved.
+# ----------------------------------------------------------------
+# 
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(all)
+# UVM_INFO @ 0: reporter [hvl_top] Starting Decoder Base Test
+# UVM_INFO @ 0: reporter [RNTST] Running test test_base...
+# UVM_INFO @ 0: reporter [UVM_CMDLINE_PROC] Applying config setting from the command line: +uvm_set_config_int=*,enable_transaction_viewing,1
+# UVM_INFO @ 0: uvm_test_top [uvm_test_top] Message from the Test_Base Build Phase
+# UVM_INFO @ 0: uvm_test_top [uvm_test_top] Message from the Test_Base Test_Base Connect Phase
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ---------------------------------------------------------------------------
+# Name                                 Type                       Size  Value
+# ---------------------------------------------------------------------------
+# uvm_test_top                         test_base                  -     @476 
+#   decode_env                         decode_environment         -     @499 
+#     decode_in_agent_inst             decode_in_agent            -     @570 
+#       decode_in_agent_inst_driver    decode_in_driver           -     @743 
+#         rsp_port                     uvm_analysis_port          -     @758 
+#           recording_detail           integral                   32    'd1  
+#         seq_item_port                uvm_seq_item_pull_port     -     @750 
+#           recording_detail           integral                   32    'd1  
+#         recording_detail             integral                   32    'd1  
+#       decode_in_agent_inst_monitor   decode_in_monitor          -     @616 
+#         monitored_ap                 uvm_analysis_port          -     @766 
+#           recording_detail           integral                   32    'd1  
+#         recording_detail             integral                   32    'd1  
+#       monitored_ap                   uvm_analysis_port          -     @623 
+#         recording_detail             integral                   32    'd1  
+#       sequencer                      uvm_sequencer              -     @631 
+#         rsp_export                   uvm_analysis_export        -     @638 
+#           recording_detail           integral                   32    'd1  
+#         seq_item_export              uvm_seq_item_pull_imp      -     @732 
+#           recording_detail           integral                   32    'd1  
+#         recording_detail             integral                   32    'd1  
+#         arbitration_queue            array                      0     -    
+#         lock_queue                   array                      0     -    
+#         num_last_reqs                integral                   32    'd1  
+#         num_last_rsps                integral                   32    'd1  
+#       recording_detail               integral                   32    'd1  
+#     decode_out_agent_inst            decode_out_agent           -     @577 
+#       decode_out_agent_inst_monitor  decode_out_monitor         -     @781 
+#         monitored_ap                 uvm_analysis_port          -     @796 
+#           recording_detail           integral                   32    'd1  
+#         recording_detail             integral                   32    'd1  
+#       monitored_ap                   uvm_analysis_port          -     @788 
+#         recording_detail             integral                   32    'd1  
+#       recording_detail               integral                   32    'd1  
+#     decode_predict_inst              decode_predictor           -     @584 
+#       analysis_imp                   uvm_analysis_imp           -     @591 
+#         recording_detail             integral                   32    'd1  
+#       predictor_ap                   uvm_analysis_port          -     @599 
+#         recording_detail             integral                   32    'd1  
+#       recording_detail               integral                   32    'd1  
+#     decode_sb_inst                   decode_scoreboard          -     @607 
+#       obsvr_ae                       uvm_analysis_imp_actual    -     @804 
+#         recording_detail             integral                   32    'd1  
+#       predict_ae                     uvm_analysis_imp_expected  -     @812 
+#         recording_detail             integral                   32    'd1  
+#       recording_detail               integral                   32    'd1  
+#     recording_detail                 integral                   32    'd1  
+#   print_compt                        print_component            -     @533 
+#     din_ae                           uvm_analysis_imp_din_ae    -     @540 
+#       recording_detail               integral                   32    'd1  
+#     dout_ae                          uvm_analysis_imp_dout_ae   -     @548 
+#       recording_detail               integral                   32    'd1  
+#     recording_detail                 integral                   32    'd1  
+#   recording_detail                   integral                   32    'd1  
+# ---------------------------------------------------------------------------
+# 
+# UVM_INFO @ 0: uvm_test_top [uvm_test_top] Message from the Test_Base Test_Base End_of_Elaboration Phase
+# UVM_INFO @ 0: uvm_test_top [uvm_test_top] Message from the Test_Base Start_of_Simulation Phase
+# UVM_INFO @ 0: uvm_test_top [uvm_test_top] Message from the Test_Base Run Phase
+#  do wave.do 
+run -all
+# **************************************************************************
+# * Questa UVM Transaction Recording Turned ON.                            *
+# * recording_detail has been set.                                         *
+# *  To turn off, set 'recording_detail' to off:                           *
+# * uvm_config_db#(int)            ::set(null, "", "recording_detail", 0); *
+# * uvm_config_db#(uvm_bitstream_t)::set(null, "", "recording_detail", 0); *
+# **************************************************************************
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 900: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : LD 
+# IR DR                : 111  
+# IR PCOFFSET9         : 010110001  
+# W_CONTROL            : MEMOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              :  2456  
+# **********************************************
+# Time:                  900 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 1100: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : LEA 
+# IR DR                : 100  
+# IR PCOFFSET9         : 010111010  
+# W_CONTROL            : PCOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 58788  
+# **********************************************
+# Time:                 1100 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 1300: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : LDR 
+# IR DR                : 011  
+# IR BaseR             : 100  
+# IR PCOFFSET6         : 011000  
+# W_CONTROL            : MEMOUT 
+# E_CONTROL            : 001000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 27957  
+# **********************************************
+# Time:                 1300 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 1500: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : LDI 
+# IR DR                : 100  
+# IR PCOFFSET9         : 101010011  
+# W_CONTROL            : MEMOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_ENABLED 
+# NPC_OUT              : 50096  
+# **********************************************
+# Time:                 1500 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 1700: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : BR 
+# IR NZP               : 000  
+# IR PCOFFSET9         : 000010111  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 22380  
+# **********************************************
+# Time:                 1700 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 1900: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ADD 
+# IR DR                : 011  
+# IR SR1               : 100  
+# IR IM                : 0  
+# IR SR2               : 100  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000001  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 12355  
+# **********************************************
+# Time:                 1900 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 2100: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ADD 
+# IR DR                : 000  
+# IR SR1               : 101  
+# IR IM                : 0  
+# IR SR2               : 101  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 60471  
+# **********************************************
+# Time:                 2100 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 2300: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : JMP 
+# IR BaseR             : 011  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 001100  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 15959  
+# **********************************************
+# Time:                 2300 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 2500: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ST 
+# IR DR                : 010  
+# IR PCOFFSET9         : 000000010  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 28509  
+# **********************************************
+# Time:                 2500 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 2700: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : AND 
+# IR DR                : 100  
+# IR SR1               : 010  
+# IR IM                : 0  
+# IR SR2               : 101  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 010001  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 41103  
+# **********************************************
+# Time:                 2700 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 2900: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : BR 
+# IR NZP               : 000  
+# IR PCOFFSET9         : 001000101  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 23581  
+# **********************************************
+# Time:                 2900 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 3100: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : NOT 
+# IR DR                : 010  
+# IR SR1               : 100  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 100000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 45982  
+# **********************************************
+# Time:                 3100 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 3300: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : STR 
+# IR DR                : 000  
+# IR BaseR             : 111  
+# IR PCOFFSET6         : 111110  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 001000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 41131  
+# **********************************************
+# Time:                 3300 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 3500: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ADD 
+# IR DR                : 100  
+# IR SR1               : 011  
+# IR IM                : 0  
+# IR SR2               : 110  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 62463  
+# **********************************************
+# Time:                 3500 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 3700: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : LEA 
+# IR DR                : 101  
+# IR PCOFFSET9         : 011000110  
+# W_CONTROL            : PCOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              :  5014  
+# **********************************************
+# Time:                 3700 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 3900: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : LDR 
+# IR DR                : 111  
+# IR BaseR             : 100  
+# IR PCOFFSET6         : 111100  
+# W_CONTROL            : MEMOUT 
+# E_CONTROL            : 001000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              :  1852  
+# **********************************************
+# Time:                 3900 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 4100: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ST 
+# IR DR                : 001  
+# IR PCOFFSET9         : 110011000  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 11609  
+# **********************************************
+# Time:                 4100 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 4300: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ADD 
+# IR DR                : 101  
+# IR SR1               : 111  
+# IR IM                : 0  
+# IR SR2               : 101  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000001  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 30648  
+# **********************************************
+# Time:                 4300 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 4500: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ST 
+# IR DR                : 110  
+# IR PCOFFSET9         : 001100011  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 54394  
+# **********************************************
+# Time:                 4500 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 4700: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : AND 
+# IR DR                : 111  
+# IR SR1               : 100  
+# IR IM                : 0  
+# IR SR2               : 111  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 010000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 33068  
+# **********************************************
+# Time:                 4700 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 4900: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : BR 
+# IR NZP               : 000  
+# IR PCOFFSET9         : 010110010  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000110  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 30461  
+# **********************************************
+# Time:                 4900 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 5100: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : LDR 
+# IR DR                : 000  
+# IR BaseR             : 010  
+# IR PCOFFSET6         : 101111  
+# W_CONTROL            : MEMOUT 
+# E_CONTROL            : 001000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 61392  
+# **********************************************
+# Time:                 5100 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 5300: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ADD 
+# IR DR                : 111  
+# IR SR1               : 010  
+# IR IM                : 0  
+# IR SR2               : 010  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000001  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 48704  
+# **********************************************
+# Time:                 5300 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 5500: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : NOT 
+# IR DR                : 111  
+# IR SR1               : 010  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 100000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              :   471  
+# **********************************************
+# Time:                 5500 
+# 
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(84) @ 5700: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst] CORRECT SCOREBOARD TRANSACTION   
+# ************Decode Out Transaction************
+# IR OPCODE            : ADD 
+# IR DR                : 001  
+# IR SR1               : 001  
+# IR IM                : 0  
+# IR SR2               : 001  
+# W_CONTROL            : ALUOUT 
+# E_CONTROL            : 000000  
+# MEM_CONTROL          : MEM_CONTROL_DISABLED 
+# NPC_OUT              : 32402  
+# **********************************************
+# Time:                 5700 
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 5900: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 5900: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO @ 5900: uvm_test_top [uvm_test_top] Message from the Test_Base Extract Phase
+# UVM_INFO @ 5900: uvm_test_top [uvm_test_top] Message from the Test_Base Check Phase
+# UVM_INFO /afs/unity.ncsu.edu/users/c/cdricha5/uvmf_template_output/project_benches/decode/sim/../../../verification_ip/environment_packages/decode_env_pkg/src/decode_scoreboard.svh(123) @ 5900: uvm_test_top.decode_env.decode_sb_inst [uvm_test_top.decode_env.decode_sb_inst]  
+# ********DECODE SCOREBOARD RESULTS*********
+# NUM PREDICTED  TRANSACTIONS:          25
+# NUM ACTUAL     TRANSACTIONS:          25
+# NUM CORRECT    TRANSACTIONS:          25
+# NUM INCORRECT  TRANSACTIONS:           0
+# NUM ENTRIES NOT RECEIVED   :           0
+# ******************************************
+# 
+# UVM_INFO @ 5900: uvm_test_top [uvm_test_top] Message from the Test_Base Report Phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   42
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     2
+# [UVMTOP]     1
+# [UVM_CMDLINE_PROC]     1
+# [hvl_top]     1
+# [uvm_test_top]     8
+# [uvm_test_top.decode_env.decode_sb_inst]    26
+# ** Note: $finish    : /afs/eos.ncsu.edu/dist/questasim2020_4/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 5900 ns  Iteration: 59  Instance: /hvl_top
+# Break in Task uvm_pkg/uvm_root::run_test at /afs/eos.ncsu.edu/dist/questasim2020_4/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
